@@ -1,0 +1,150 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Love ❤️</title><style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+background:linear-gradient(135deg,#ff758c,#ff7eb3,#ff9a9e);
+overflow:hidden;
+}
+
+.container{
+text-align:center;
+z-index:10;
+}
+
+button{
+padding:18px 35px;
+font-size:22px;
+border:none;
+border-radius:50px;
+background:#fff;
+color:#ff4f81;
+cursor:pointer;
+box-shadow:0 10px 25px rgba(0,0,0,.25);
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+.popup{
+display:none;
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+width:90%;
+max-width:550px;
+background:#fff;
+padding:35px;
+border-radius:25px;
+text-align:center;
+box-shadow:0 20px 40px rgba(0,0,0,.3);
+z-index:20;
+animation:fade .5s;
+}
+
+.popup h2{
+color:#ff4f81;
+margin-bottom:20px;
+}
+
+.popup p{
+line-height:1.8;
+color:#555;
+font-size:17px;
+}
+
+@keyframes fade{
+from{opacity:0;transform:translate(-50%,-40%);}
+to{opacity:1;transform:translate(-50%,-50%);}
+}
+
+/* Floating Hearts */
+
+.heart{
+position:absolute;
+bottom:-30px;
+font-size:24px;
+animation:float linear infinite;
+opacity:.8;
+}
+
+@keyframes float{
+0%{
+transform:translateY(0) rotate(0deg);
+opacity:0;
+}
+20%{
+opacity:1;
+}
+100%{
+transform:translateY(-120vh) rotate(360deg);
+opacity:0;
+}
+}
+</style></head><body><div class="container">
+<button onclick="openLetter()">Open My Heart ❤️</button>
+</div><div class="popup" id="letter"><h2>To My Love ❤️</h2><p>I'm sorry for every mistake I've made and every tear I've caused.
+
+You deserve better, and I know I've fallen short.
+
+Thank you for loving me with a love that's different from anything I've ever known.
+
+I appreciate every little thing you do, even the things I forget to say thank you for.
+
+I think about you every single day, and the thought of losing you hurts more than I can explain.
+
+I'm not asking you to forget everything.
+
+I'm only asking for one chance to become the man you deserve.
+
+I love you with all my heart.
+
+❤️
+
+</p><br><h3>Will You Forgive Me? 🌹</h3></div><script>
+
+function openLetter(){
+document.getElementById("letter").style.display="block";
+}
+
+function createHeart(){
+
+const heart=document.createElement("div");
+
+heart.classList.add("heart");
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.animationDuration=(Math.random()*4+4)+"s";
+
+heart.style.fontSize=(Math.random()*25+15)+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},8000);
+
+}
+
+setInterval(createHeart,300);
+
+</script></body>
+</html>
